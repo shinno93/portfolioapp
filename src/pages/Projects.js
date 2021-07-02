@@ -1,39 +1,16 @@
 import React from 'react';
-import { Card, Row, Col, Carousel, Container } from "react-bootstrap";
-import CreateTask from '../images/create_task.png';
-import AnswerTask from '../images/answer_task_progress.png';
-import ViewTask from '../images/view_result.png';
-import ViewTask2 from '../images/view_result2.png';
-import TeacherDashboard from '../images/teacher_dashboard.png';
-import StockList from '../images/stocklist.png';
-import StockInfo from '../images/stockinfo.png';
-import Ravenous from '../images/ravenous1.png';
-import Ravenous2 from '../images/ravenous2.png';
+import { Card, Row, Col, Container } from "react-bootstrap";
+import StocksApp from '../images/stocksApp.gif';
+import StudentConnect from '../images/StudentConnect.gif';
+import Revenous from '../images/revenous.gif';
+import MobileStocksApp from '../images/MobileStocksApp.gif';
 
 const projectList = [
     {
-        imgList:[
-            {
-                src: TeacherDashboard,
-                alt: 'teacher\'s dashboard'
-            },
-            {
-                src: CreateTask,
-                alt: 'create task'
-            },
-            {
-                src: AnswerTask,
-                alt: 'answer task progress'
-            },
-            {
-                src: ViewTask,
-                alt: 'view students\' progress'
-            },
-            {
-                src: ViewTask,
-                alt: 'view students\' progress2'
-            }
-        ],
+        img:{
+            src: StudentConnect,
+            alt: 'Student Connect web platoform'
+        },
         title: 'Student Connect',
         textList: [
             'During the outbreak of COVID-19, teachers found that it was hard to monitor student progress, engagement and mental well-being under remote learning',
@@ -54,22 +31,16 @@ const projectList = [
         ]
     },
     {
-        imgList:[
-            {
-                src: StockList,
-                alt: 'stock list'
-            },
-            {
-                src: StockInfo,
-                alt: 'price history'
-            },
-        ],
+        img: {
+            src: StocksApp,
+            alt: 'stocks web app'
+        },
         title: 'Stocks App',
         textList: [
             'Check stock prices for NASDAQ 100 companies',
         ],
         featureList: [
-            'Search Stocks',
+            'Search stocks',
             'Check price history of a selected stock',
             'Chart function'
         ],
@@ -79,12 +50,10 @@ const projectList = [
         ]
     },
     {
-        imgList:[
-            {
-                src: Ravenous,
-                alt: 'search page'
-            }
-        ],
+        img:{
+            src: Revenous,
+            alt: 'revenous we app'
+        },
         title: 'Ravenous',
         textList: [
             'Find local businesses from Yelp!',
@@ -97,6 +66,28 @@ const projectList = [
         techList: [
             "devicon-react-original colored",
             "devicon-javascript-plain colored"
+        ]
+    },
+    {
+        img:{
+            src: MobileStocksApp,
+            alt: 'stocks mobile app'
+        },
+        title: 'Stocks App (Mobile)',
+        textList: [
+            'Check stock prices on a mobile phone',
+        ],
+        featureList: [
+            'Login & Sign Up',
+            'Add & Delete stocks to your watchlist',
+            'Access your wachlsit from any devices'
+        ],
+        techList: [
+            "devicon-react-original colored",
+            "devicon-nodejs-plain-wordmark colored",
+            "devicon-express-original colored",
+            "devicon-mysql-plain-wordmark colored",
+            "devicon-javascript-plain colored",
         ]
     }
 ]
@@ -115,19 +106,7 @@ export function Projects() {
                             <Card style={{ width: '100%', justifyContent:'center', alignItems:'center'}}>
                                 <Row>
                                     <Col lg={6}>
-                                        <Carousel>
-                                            {projectObject.imgList.map((img, index) => {
-                                                return (
-                                                    <Carousel.Item key={`img-${index}`}>
-                                                        <img
-                                                        className="d-block w-100"
-                                                        src={img.src}
-                                                        alt={img.alt}
-                                                        />
-                                                    </Carousel.Item>
-                                                )
-                                            })}      
-                                        </Carousel> 
+                                        <img src={projectObject.img.src} alt={projectObject.img.alt} />  
                                     </Col>
                                     <Col lg={6}>
                                         <Card.Body>
@@ -153,9 +132,9 @@ export function Projects() {
                             </Card> 
                         </Col>
                         <Col></Col>
-                    </Row>
+                    </Row>     
                 )
-            })}            
+            })}           
         </Container>
     )
 }
