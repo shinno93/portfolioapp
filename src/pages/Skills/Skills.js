@@ -1,5 +1,6 @@
+import './Skills.css';
 import React from 'react';
-import { Card, Row, Col, Container } from "react-bootstrap";
+import { Card, Row, Col, Container } from 'react-bootstrap';
 
 const skillList = [
     {
@@ -54,20 +55,20 @@ const skillList = [
 
 export function Skills() {
     return (
-        <Container style={{"marginTop": 30, "marginBottom": 50}}>
-            <h2 style={{textAlign: 'center', "marginTop": 30, "marginBottom": 30}}>Skills</h2>
+        <Container className="section-container">
+            <h2 className="section-title">Skills</h2>
             <div className="container rounded mt-4 p-2" style={{"backgroundColor": "white"}}>
                 <Row>
                     {skillList.map((skill, index) => {
                         return(
-                            <Col xs={4} sm={4} md={3} lg={2} key={index} style={{ "marginTop": 10, "marginBottom": 10 }}>
+                            <Col xs={4} sm={4} md={3} lg={2} key={index} className="skill-icon" >
                                 <Card
                                 bg='light'
                                 text='black'
                                 className="shadow-sm text-center"
                                 >
                                     <Card.Body>
-                                    <i className={skill.tech} style={{"fontSize":'4em'}}></i>
+                                    <i className={skill.tech}></i>
                                     </Card.Body>
                                 </Card>
                             </Col>
@@ -78,9 +79,3 @@ export function Skills() {
         </Container>
     )
 }
-/*
-"devicon-react-original colored",
-            "devicon-nodejs-plain-wordmark colored",
-            "devicon-express-original colored",
-            "devicon-firebase-plain colored",
-            "devicon-javascript-plain colored" */

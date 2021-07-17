@@ -1,9 +1,11 @@
+import "./Projects.css";
 import React from 'react';
-import { Card, Row, Col, Container } from "react-bootstrap";
-import StocksApp from '../images/stocksApp.gif';
-import StudentConnect from '../images/StudentConnect.gif';
-import Revenous from '../images/revenous.gif';
-import MobileStocksApp from '../images/MobileStocksApp.gif';
+import { Card, Row, Col, Container, Button } from "react-bootstrap";
+import StocksApp from '../../images/stocksApp.gif';
+import StudentConnect from '../../images/StudentConnect.gif';
+import Revenous from '../../images/revenous.gif';
+import MobileStocksApp from '../../images/MobileStocksApp.gif';
+import {FaGithub} from "react-icons/fa";
 
 const projectList = [
     {
@@ -47,7 +49,8 @@ const projectList = [
         techList: [
             "devicon-react-original colored",
             "devicon-javascript-plain colored"
-        ]
+        ],
+        sourceLink: "https://github.com/shinno93/stocksapp"
     },
     {
         img:{
@@ -66,7 +69,8 @@ const projectList = [
         techList: [
             "devicon-react-original colored",
             "devicon-javascript-plain colored"
-        ]
+        ],
+        sourceLink: "https://github.com/shinno93/Ravenous"
     },
     {
         img:{
@@ -79,7 +83,7 @@ const projectList = [
         ],
         featureList: [
             'Login & Sign Up',
-            'Add & Delete stocks to your watchlist',
+            'Add stocks to your watchlist',
             'Access your wachlsit from any devices'
         ],
         techList: [
@@ -96,21 +100,24 @@ const projectList = [
 
 export function Projects() {
     return (
-        <Container style={{"marginTop": 30, "marginBottom": 50}}>
-            <h2 style={{textAlign: 'center', "marginTop": 30, "marginBottom": 30}}>Projects</h2>
+        <Container className="section-container">
+            <h2 className="section-title">Projects</h2>
             {projectList.map((projectObject, index) => {
                 return (
-                    <Row key={`pj-${index}`} style={{ "marginTop": 20, "marginBottom": 20 }}>
+                    <Row key={`pj-${index}`} className="project-container">
                         <Col></Col>
                         <Col xs={12} lg={12}>
-                            <Card style={{ width: '100%', justifyContent:'center', alignItems:'center'}}>
+                            <Card className="project-card">
                                 <Row>
                                     <Col lg={6}>
                                         <img src={projectObject.img.src} alt={projectObject.img.alt} />  
                                     </Col>
                                     <Col lg={6}>
                                         <Card.Body>
-                                        <Card.Title>{projectObject.title}</Card.Title>
+                                        <Card.Title className="project-title">{projectObject.title}</Card.Title>
+                                        {projectObject.sourceLink && 
+                                            <FaGithub className="project-icon" 
+                                            onClick={() => window.open(projectObject.sourceLink, "_blank")}/>}
                                         {projectObject.textList.map((text, index) => {
                                             return (
                                                 <Card.Text key={`text-${index}`}>{text}</Card.Text>
@@ -123,9 +130,9 @@ export function Projects() {
                                                     return <li key={`feature-${index}`}>{feature}</li>
                                                 })}
                                             </ul> 
-                                        {projectObject.techList.map((technology, index) => {
-                                            return <i key={`tech-${index}`} className={technology} style={{"fontSize":'4em'}}></i>
-                                        })}
+                                            {projectObject.techList.map((technology, index) => {
+                                                return <i key={`tech-${index}`} className={technology}></i>
+                                            })}
                                         </Card.Body>
                                     </Col>
                                 </Row>

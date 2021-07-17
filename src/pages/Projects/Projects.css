@@ -1,0 +1,27 @@
+.project-card {
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.project-title {
+    display: inline-block;
+}
+
+.project-icon {
+    font-size: 2em;
+    margin-left: 20px;
+}
+
+.project-icon :hover {
+    opacity: 0.7;
+}
+
+.project-container {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+[class^="devicon"] {
+    font-size: 4em;
+}

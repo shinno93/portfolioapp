@@ -31,8 +31,8 @@ const contents =
 
 export function History() {
     return (
-        <Container style={{"marginTop": 30, "marginBottom": 50}}>
-            <h2 style={{textAlign: 'center', "marginTop": 30, "marginBottom": 10}}>Work Experience & Education</h2>
+        <Container className="section-container">
+            <h2 className="section-title">Work Experience & Education</h2>
             <VerticalTimeline>
                 {contents.map( (content, index) => {
                     return (

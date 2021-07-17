@@ -1,0 +1,8 @@
+.landing-icon {
+    font-size: 3em;
+    margin-right: 10px;
+}
+
+.landing-icon :hover {
+    opacity: 0.7;
+}

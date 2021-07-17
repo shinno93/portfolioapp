@@ -1,10 +1,10 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { LinkContainer } from "react-router-bootstrap";
-import { Projects } from "../pages/Projects";
+import { Projects } from "../pages/Projects/Projects";
 import { History } from "../pages/History";
-import { Skills } from "../pages/Skills";
-import Home from "../pages/Home";
+import { Skills } from "../pages/Skills/Skills";
+import Home from "../pages/Home/Home";
 import ErrorPage from "../pages/ErrorPage";
 import { Navbar, Nav } from "react-bootstrap";
 import Logo from "../images/favicon-32x32.png";
